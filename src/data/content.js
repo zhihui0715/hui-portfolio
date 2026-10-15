@@ -184,7 +184,7 @@ export const projects = [
     title: 'ScamShield MY',
     sub: 'Scam awareness for Malaysia',
     body: 'A project aimed at helping people in Malaysia spot common scams before they fall for them — turning the "notice what\'s off" instinct I want as an analyst into something ordinary people can use.',
-    href: null, // add 'https://github.com/zhihui0715/scamshield-my' back once the repo is public
+    href: 'https://github.com/zhihui0715/scamshield-my',
   },
 ];
 
