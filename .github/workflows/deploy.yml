@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
-# Manual only for now: GitHub Pages needs a public repo (or a paid plan).
-# To auto-deploy later, make the repo public, enable Pages (Source: GitHub Actions), and add back:
-#   push:
-#     branches: [main]
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
