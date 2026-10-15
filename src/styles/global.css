@@ -125,6 +125,13 @@ ol {
 }
 main > section {
   position: relative;
+  /* animations start elements off to the side; clip so they never widen the page on phones */
+  overflow-x: clip;
+}
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 ::view-transition-old(root),
@@ -1521,7 +1528,8 @@ main,
   flex: none;
   border-radius: 50%;
   background: var(--ink);
-  transition: transform 0.4s var(--ease), background 0.4s;
+  /* `scale`, not `transform`: GSAP owns transform for the pop-in, and a CSS transition on it would fight GSAP */
+  transition: scale 0.4s var(--ease), background 0.4s;
 }
 .orbits__ring--learning .planet__dot {
   background: var(--accent);
@@ -1543,7 +1551,7 @@ main,
   transition: background 0.3s, color 0.3s;
 }
 .planet__body.is-focus .planet__dot {
-  transform: scale(1.8);
+  scale: 1.8;
 }
 .planet__body.is-focus .planet__label {
   background: var(--ink);
@@ -1768,7 +1776,7 @@ main,
   padding-bottom: 28px;
 }
 .footer__name {
-  font-size: clamp(4rem, 23.5vw, 30rem);
+  font-size: clamp(3rem, 15.5vw, 20rem);
   line-height: 0.8;
   text-align: center;
   white-space: nowrap;
@@ -2092,7 +2100,8 @@ main,
   .sport,
   .contact__top,
   .road__head {
-    grid-template-columns: 1fr;
+    /* minmax(0, …) lets long unbreakable words shrink instead of widening the column */
+    grid-template-columns: minmax(0, 1fr);
   }
   .toy__stage {
     max-width: 520px;
@@ -2218,9 +2227,49 @@ main,
     bottom: 90px;
     height: min(600px, calc(100svh - 120px));
   }
+  /* the orbit is too small for labels on a phone — it becomes a moving diagram, the list below carries the names */
   .planet__label {
-    font-size: 0.6rem;
-    padding: 0.2em 0.5em;
+    display: none;
+  }
+  .planet__dot {
+    width: 12px;
+    height: 12px;
+  }
+  .orbits {
+    width: min(100%, 340px);
+  }
+  .skills__grid {
+    gap: 40px;
+  }
+  .project {
+    padding: 24px 20px;
+  }
+  .project__title {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+  .contact__v {
+    font-size: clamp(1rem, 4.9vw, 1.3rem);
+  }
+  .contact__time {
+    align-items: flex-start;
+  }
+  .contact__time .pulse {
+    margin-top: 0.55em;
+    flex: none;
+  }
+  .bot-launch {
+    width: 54px;
+    height: 54px;
+    right: 14px;
+    bottom: 14px;
+    font-size: 0.92rem;
+  }
+  .bot-launch__orbit {
+    inset: -6px;
+  }
+  .bot {
+    bottom: 80px;
   }
 }
 

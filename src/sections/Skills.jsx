@@ -16,7 +16,7 @@ export default function Skills() {
       .timeline({ scrollTrigger: { trigger: '.orbits', start: 'top 75%', once: true } })
       .from('.orbits__ring', { scale: 0, autoAlpha: 0, duration: 1.6, ease: 'expo.out', stagger: 0.15 })
       .from('.orbits__core', { scale: 0, duration: 1.2, ease: 'back.out(2)' }, 0.1)
-      .from('.planet__dot, .planet__label', { scale: 0, duration: 0.8, ease: 'back.out(3)', stagger: 0.04 }, 0.5);
+      .fromTo('.planet__dot, .planet__label', { scale: 0 }, { scale: 1, duration: 0.8, ease: 'back.out(3)', stagger: 0.04 }, 0.5);
   });
 
   return (
