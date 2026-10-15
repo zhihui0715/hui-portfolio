@@ -160,7 +160,7 @@ const INTENTS = [
   },
   {
     id: 'location',
-    keys: ['location', 'where are you from', 'where do you live', 'live', 'from', 'johor', 'batu pahat', 'malaysia', 'hometown', 'country'],
+    keys: ['location', 'where are you from', 'where do you live', 'live', 'from', 'johor', 'muar', 'malaysia', 'hometown', 'country'],
     answer: () => `${profile.location}. During semesters, living ${profile.living.toLowerCase()}.`,
     follow: ['What time is it there?'],
   },

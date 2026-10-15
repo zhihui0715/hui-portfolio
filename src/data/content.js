@@ -13,7 +13,7 @@ export const profile = {
   cgpa: '3.86',
   sem1Gpa: '3.86',
   living: 'Off-campus, near MMU',
-  location: 'Batu Pahat, Johor, Malaysia',
+  location: 'Muar, Johor, Malaysia',
   photo: img('profile-photo.jpg'),
 };
 
